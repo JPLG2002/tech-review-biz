@@ -11,7 +11,6 @@
     { "src": "/teclados", "dest": "/teclados.html" },
     { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
     { "src": "/rss.xml", "dest": "/rss.xml" },
-    { "src": "/robots.txt", "dest": "/robots.txt" },
-    { "href": "/(.*)", "src": "/(.*)" }
+    { "src": "/robots.txt", "dest": "/robots.txt" }
   ]
 }
