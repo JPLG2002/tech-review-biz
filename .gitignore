@@ -1,6 +1,2 @@
 node_modules/
 .env
-data/posts.json
-public/*.html
-public/sitemap.xml
-public/rss.xml

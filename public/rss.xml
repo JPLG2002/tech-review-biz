@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TechReviewPro</title>
+    <link>https://techreviewpro.vercel.app</link>
+    <description>Las mejores reseñas y comparativas de tecnología</description>
+    <language>es-mx</language>
+    <atom:link href="https://techreviewpro.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
+    
+  <item>
+    <title>Las 5 mejores laptops para programar en 2026</title>
+    <link>https://techreviewpro.vercel.app/las-5-mejores-laptops-para-programar-en-2026</link>
+    <description>Descubre las mejores laptops para programar en 2026. Analizamos rendimiento, duración de batería, calidad de construcción y precio para ayudarte a elegir la mejor opción.</description>
+    <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
+    <guid>https://techreviewpro.vercel.app/las-5-mejores-laptops-para-programar-en-2026</guid>
+  </item>
+  </channel>
+</rss>
