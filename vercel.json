@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/css/(.*)", "dest": "/css/$1" },
+    { "src": "/laptops", "dest": "/laptops.html" },
+    { "src": "/audifonos", "dest": "/audifonos.html" },
+    { "src": "/smartphones", "dest": "/smartphones.html" },
+    { "src": "/monitores", "dest": "/monitores.html" },
+    { "src": "/teclados", "dest": "/teclados.html" },
+    { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
+    { "src": "/rss.xml", "dest": "/rss.xml" },
+    { "src": "/robots.txt", "dest": "/robots.txt" },
+    { "href": "/(.*)", "src": "/(.*)" }
+  ]
+}

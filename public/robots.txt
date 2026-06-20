@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://techreviewpro.vercel.app/sitemap.xml
