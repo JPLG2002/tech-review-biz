@@ -92,18 +92,22 @@ body {
 }
 
 .hero h1 { 
-  font-size: 3rem; 
+  font-size: 3.2rem; 
   font-weight: 800;
-  letter-spacing: -1px;
-  margin-bottom: 15px; 
-  color: var(--accent-color); /* Letras azules */
+  letter-spacing: -1.5px;
+  margin-bottom: 20px; 
+  background: linear-gradient(135deg, #00bcf2, #004080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
 }
 
 .hero p { 
-  font-size: 1.25rem; 
-  color: #666; 
-  max-width: 650px; 
+  font-size: 1.3rem; 
+  color: #444; 
+  max-width: 700px; 
   margin: 0 auto; 
+  line-height: 1.7;
 }
 
 /* HEADINGS */
