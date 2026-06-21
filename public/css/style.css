@@ -115,7 +115,7 @@ h2 {
   font-size: 1.8rem; 
   font-weight: 800;
   margin-bottom: 25px; 
-  color: var(--accent-color); /* Letras azules */
+  color: #00bcf2; /* Color azul San Andrés */
   letter-spacing: -0.5px;
 }
 
@@ -159,8 +159,8 @@ h2 {
   padding: 20px;
   text-align: center;
   font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--text-heading);
+  font-weight: 800;
+  color: #00bcf2; /* Color azul San Andrés */
 }
 
 .post-info {
@@ -181,10 +181,10 @@ h2 {
 
 .post-card h3 {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 800;
   margin-bottom: 10px;
   line-height: 1.3;
-  color: var(--text-heading);
+  color: #00bcf2; /* Color azul San Andrés */
 }
 
 .post-card p {
