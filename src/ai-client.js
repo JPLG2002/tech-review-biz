@@ -6,7 +6,8 @@ export async function generateContent(prompt, systemPrompt = '') {
     throw new Error('OPENAI_API_KEY no configurada. Configúrala en variables de entorno.');
   }
 
-  const response = await fetch('https://api.openai.com/v1/chat/completions', {
+  const baseURL = config.ai.baseURL || 'https://api.openai.com/v1/chat/completions';
+  const response = await fetch(baseURL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

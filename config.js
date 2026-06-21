@@ -40,10 +40,11 @@ export const config = {
   },
 
   ai: {
-    provider: 'openai',
-    model: 'gpt-4o-mini',
+    provider: 'gemini',
+    baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions',
+    model: 'gemini-3.5-flash',
     temperature: 0.7,
     maxTokens: 2000,
-    apiKey: process.env.OPENAI_API_KEY || '',
+    apiKey: process.env.OPENAI_API_KEY || process.env.GEMINI_API_KEY || '',
   },
 };
