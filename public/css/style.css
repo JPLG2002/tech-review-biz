@@ -31,7 +31,7 @@ body {
 
 /* HEADER */
 .header {
-  background: rgba(255, 255, 255, 0.85);
+  background: #e3f2fd; /* Fondo azul claro */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
@@ -50,7 +50,7 @@ body {
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-heading);
+  color: #000000; /* Texto negro */
   text-decoration: none;
   letter-spacing: -0.5px;
 }
@@ -58,10 +58,10 @@ body {
 .nav { display: flex; gap: 20px; flex-wrap: wrap; }
 
 .nav a {
-  color: #555;
+  color: #000000; /* Texto negro */
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 600;
   transition: color 0.2s;
 }
 
@@ -83,10 +83,10 @@ body {
 
 .hero h1 { 
   font-size: 3rem; 
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -1px;
   margin-bottom: 15px; 
-  color: var(--text-heading);
+  color: var(--accent-color); /* Letras azules */
 }
 
 .hero p { 
@@ -99,9 +99,9 @@ body {
 /* HEADINGS */
 h2 { 
   font-size: 1.8rem; 
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 25px; 
-  color: var(--text-heading);
+  color: var(--accent-color); /* Letras azules */
   letter-spacing: -0.5px;
 }
 
