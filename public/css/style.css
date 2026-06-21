@@ -39,7 +39,7 @@ body {
 
 /* HEADER */
 .header {
-  background: #e3f2fd; /* Fondo azul claro */
+  background: #00bcf2; /* Azul vivo mar de San Andrés */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
