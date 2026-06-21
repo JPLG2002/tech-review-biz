@@ -77,13 +77,15 @@ Categoría: ${category}
 Formato requerido:
 - Título principal (H1)
 - Introducción atractiva
-- Para cada producto recomiendalo con: nombre, pros, contras, precio aproximado, y enlace de afiliado como [Ver producto](https://amzn.to/XXXXX)
+- Para cada producto recomiéndalo con: nombre, pros, contras, precio aproximado, y los DOS enlaces de compra obligatorios.
 - Tabla comparativa
 - Sección de preguntas frecuentes (FAQ)
 - Conclusión con recomendación final
 
 REQUISITO OBLIGATORIO: El artículo debe tener al menos ${config.content.minWords} palabras.
-IMPORTANTE: Para cada producto mencionado, incluye un enlace de afiliado con formato [Nombre](https://amzn.to/XXXXX) al menos 3 veces en todo el artículo.
+IMPORTANTE: Al final de CADA producto, pon SIEMPRE estos dos botones juntos:
+[Ver precio en Amazon](https://amzn.to/XXXXX)
+[Ver en Mercado Libre](https://mercadolibre.com.mx/XXXXX)
 Escribe en español neutro (latinoamerica).`;
 }
 
@@ -115,7 +117,7 @@ export async function generatePost(categoryId) {
     date: new Date().toISOString(),
     excerpt: content.substring(0, 160).replace(/\n/g, ' ').trim() + '...',
     wordCount: content.split(/\s+/).length,
-    links: extractAmazonLinks(content),
+    links: extractAffiliateLinks(content),
     published: false,
   };
 
@@ -124,8 +126,9 @@ export async function generatePost(categoryId) {
 
 export { topics };
 
-function extractAmazonLinks(content) {
-  const matches = content.match(/\[([^\]]+)\]\(https:\/\/amzn\.to\/[^\)]+\)/g) || [];
+function extractAffiliateLinks(content) {
+  // Extrae links de amzn.to y mercadolibre.com.mx
+  const matches = content.match(/\[([^\]]+)\]\((https:\/\/(amzn\.to|mercadolibre\.com\.mx)\/[^\)]+)\)/g) || [];
   return matches.map(m => {
     const [, text] = m.match(/\[([^\]]+)\]/) || ['', ''];
     const [, url] = m.match(/\(([^\)]+)\)/) || ['', ''];

@@ -1,40 +1,40 @@
-/* THEME VARIABLES - DARK MODE & NEON */
+/* THEME VARIABLES - LIGHT APPLE STYLE */
 :root {
-  --bg-primary: #0b0c10;
-  --bg-secondary: #1f2833;
-  --bg-glass: rgba(31, 40, 51, 0.7);
-  --text-main: #c5c6c7;
-  --text-heading: #ffffff;
-  --accent-cyan: #66fcf1;
-  --accent-teal: #45a29e;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f7;
+  --text-main: #333333;
+  --text-heading: #1d1d1f;
+  --accent-color: #0066cc;
+  --border-color: #e5e5ea;
   
   --amazon-color: #ff9900;
   --amazon-hover: #e68a00;
   --ml-color: #ffe600;
   --ml-hover: #e6cf00;
+  
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-hover: 0 12px 32px rgba(0,0,0,0.12);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.7;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
   color: var(--text-main);
-  background: var(--bg-primary);
-  /* Fondo sutilmente texturizado o gradiente */
-  background-image: radial-gradient(circle at top right, rgba(69, 162, 158, 0.1), transparent 40%),
-                    radial-gradient(circle at bottom left, rgba(102, 252, 241, 0.05), transparent 40%);
-  background-attachment: fixed;
+  background: var(--bg-secondary);
+  -webkit-font-smoothing: antialiased;
 }
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-/* HEADER - GLASSMORPHISM */
+/* HEADER */
 .header {
-  background: var(--bg-glass);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(102, 252, 241, 0.1);
+  border-bottom: 1px solid var(--border-color);
   padding: 15px 0;
   position: sticky;
   top: 0;
@@ -48,177 +48,153 @@ body {
 }
 
 .logo {
-  font-size: 1.6rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--text-heading);
   text-decoration: none;
   letter-spacing: -0.5px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
-.logo::before {
-  content: '';
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  background: var(--accent-cyan);
-  border-radius: 50%;
-  box-shadow: 0 0 10px var(--accent-cyan);
-}
-
-.nav { display: flex; gap: 25px; flex-wrap: wrap; }
+.nav { display: flex; gap: 20px; flex-wrap: wrap; }
 
 .nav a {
-  color: var(--text-main);
+  color: #555;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 5px 0;
-  position: relative;
+  transition: color 0.2s;
 }
 
-.nav a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--accent-cyan);
-  transition: width 0.3s ease;
-}
-
-.nav a:hover { color: var(--text-heading); }
-.nav a:hover::after { width: 100%; }
+.nav a:hover { color: var(--accent-color); }
 
 /* MAIN */
-.main { min-height: 70vh; padding: 50px 20px; }
+.main { min-height: 70vh; padding: 40px 20px; }
 
 /* HERO */
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(135deg, rgba(31,40,51,0.8) 0%, rgba(11,12,16,0.9) 100%);
-  border: 1px solid rgba(102, 252, 241, 0.15);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  border-radius: 16px;
-  margin-bottom: 60px;
-  position: relative;
-  overflow: hidden;
+  background: var(--bg-primary);
+  border-radius: 20px;
+  margin-bottom: 50px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
 }
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -50%; left: -50%;
-  width: 200%; height: 200%;
-  background: radial-gradient(circle, rgba(102,252,241,0.05) 0%, transparent 50%);
-  animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate { 100% { transform: rotate(360deg); } }
 
 .hero h1 { 
-  font-size: 2.8rem; 
-  margin-bottom: 20px; 
+  font-size: 3rem; 
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 15px; 
   color: var(--text-heading);
-  position: relative;
 }
+
 .hero p { 
-  font-size: 1.2rem; 
-  color: var(--text-main); 
+  font-size: 1.25rem; 
+  color: #666; 
   max-width: 650px; 
   margin: 0 auto; 
-  position: relative;
 }
 
-/* CATEGORIES & POSTS */
+/* HEADINGS */
 h2 { 
-  font-size: 2rem; 
-  margin-bottom: 30px; 
+  font-size: 1.8rem; 
+  font-weight: 700;
+  margin-bottom: 25px; 
   color: var(--text-heading);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-h2::before {
-  content: '';
-  display: block;
-  width: 4px;
-  height: 24px;
-  background: var(--accent-cyan);
-  border-radius: 2px;
+  letter-spacing: -0.5px;
 }
 
+/* GRIDS */
 .category-grid, .post-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 25px;
   margin-bottom: 60px;
 }
 
-/* GLASS CARDS */
+/* IMAGE CARDS */
 .category-card, .post-card {
-  background: var(--bg-glass);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 30px;
+  background: var(--bg-primary);
+  border-radius: 18px;
+  overflow: hidden;
   text-decoration: none;
   color: var(--text-main);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--border-color);
 }
 
-.category-card {
+.category-card:hover, .post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* CARD IMAGES */
+.cat-image, .post-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-color: #eee;
+}
+
+.cat-title {
+  padding: 20px;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: var(--text-heading);
 }
 
-.post-card:hover, .category-card:hover {
-  transform: translateY(-8px);
-  background: rgba(45, 55, 72, 0.8);
-  border-color: rgba(102, 252, 241, 0.3);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(102, 252, 241, 0.1);
+.post-info {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .post-card .cat-label {
-  font-size: 0.8rem;
-  color: var(--accent-cyan);
+  font-size: 0.75rem;
+  color: var(--accent-color);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .post-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-  line-height: 1.4;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.3;
   color: var(--text-heading);
 }
 
 .post-card p {
   font-size: 0.95rem;
+  color: #666;
   flex: 1;
 }
 
 .post-card .date {
   font-size: 0.8rem;
-  color: #777;
-  margin-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  padding-top: 15px;
+  color: #999;
+  margin-top: 15px;
 }
 
 /* SINGLE POST STYLING */
-.post { max-width: 800px; margin: 0 auto; }
+.post { 
+  max-width: 800px; 
+  margin: 0 auto; 
+  background: var(--bg-primary);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
 
 .post-meta {
   display: flex;
@@ -229,9 +205,8 @@ h2::before {
 }
 
 .post-meta .category {
-  background: rgba(102, 252, 241, 0.1);
-  color: var(--accent-cyan);
-  border: 1px solid rgba(102, 252, 241, 0.2);
+  background: rgba(0, 102, 204, 0.1);
+  color: var(--accent-color);
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -240,98 +215,99 @@ h2::before {
 
 .post h1 { 
   font-size: 2.5rem; 
+  font-weight: 800;
+  letter-spacing: -1px;
   margin-bottom: 30px; 
   line-height: 1.2; 
   color: var(--text-heading);
 }
 
 .post-content h2 { font-size: 1.8rem; margin: 40px 0 20px; }
-.post-content h3 { font-size: 1.4rem; margin: 30px 0 15px; color: #e2e2e2; }
-.post-content p { margin-bottom: 20px; font-size: 1.05rem; }
-.post-content ul, .post-content ol { margin: 20px 0; padding-left: 25px; font-size: 1.05rem; }
+.post-content h3 { font-size: 1.4rem; margin: 30px 0 15px; color: #444; }
+.post-content p { margin-bottom: 20px; font-size: 1.1rem; color: #444; }
+.post-content ul, .post-content ol { margin: 20px 0; padding-left: 25px; font-size: 1.1rem; color: #444; }
 .post-content li { margin-bottom: 10px; }
 
 /* TABLAS COMPARATIVAS */
 .post-content table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
+  border-collapse: collapse;
   margin: 30px 0;
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 0 1px var(--border-color);
 }
 
 .post-content th, .post-content td {
   padding: 15px;
   text-align: left;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid var(--border-color);
 }
 
-.post-content th { background: rgba(31, 40, 51, 0.9); color: var(--accent-cyan); font-weight: 600; }
+.post-content th { background: #f9f9fb; color: var(--text-heading); font-weight: 600; }
 .post-content tr:last-child td { border-bottom: none; }
-.post-content tr:hover td { background: rgba(255,255,255,0.02); }
 
-/* ✨ BOTONES DE AFILIADO DE ALTA CONVERSIÓN ✨ */
+/* BOTONES DE AFILIADO DE ALTA CONVERSIÓN */
 .post-content a {
-  color: var(--accent-cyan);
+  color: var(--accent-color);
   text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s;
+  font-weight: 500;
 }
-.post-content a:hover { color: #fff; }
+.post-content a:hover { text-decoration: underline; }
 
-/* Convertir enlaces de Amazon en Botones */
+/* Amazon Button */
 .post-content a[href*="amzn.to"], .post-content a[href*="amazon"] {
   display: block;
   background: var(--amazon-color);
   color: #111 !important;
   text-align: center;
-  padding: 15px 25px;
-  border-radius: 8px;
+  padding: 16px 25px;
+  border-radius: 12px;
   font-size: 1.1rem;
   font-weight: 700;
   margin: 15px 0;
-  box-shadow: 0 4px 15px rgba(255, 153, 0, 0.2);
-  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  text-decoration: none !important;
 }
 
 .post-content a[href*="amzn.to"]:hover, .post-content a[href*="amazon"]:hover {
   background: var(--amazon-hover);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 153, 0, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 153, 0, 0.4);
 }
 
-/* Convertir enlaces de Mercado Libre en Botones */
+/* Mercado Libre Button */
 .post-content a[href*="mercadolibre"] {
   display: block;
   background: var(--ml-color);
   color: #2d3277 !important;
   text-align: center;
-  padding: 15px 25px;
-  border-radius: 8px;
+  padding: 16px 25px;
+  border-radius: 12px;
   font-size: 1.1rem;
   font-weight: 800;
-  margin: 15px 0 30px 0;
-  box-shadow: 0 4px 15px rgba(255, 230, 0, 0.2);
-  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  margin: 15px 0 35px 0;
+  box-shadow: 0 4px 12px rgba(255, 230, 0, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  text-decoration: none !important;
 }
 
 .post-content a[href*="mercadolibre"]:hover {
   background: var(--ml-hover);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 230, 0, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 230, 0, 0.5);
 }
 
 /* FOOTER */
 .footer {
-  background: rgba(11, 12, 16, 0.8);
-  border-top: 1px solid rgba(255,255,255,0.05);
-  color: #777;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+  color: #888;
   padding: 30px 0;
   text-align: center;
   font-size: 0.9rem;
@@ -342,11 +318,8 @@ h2::before {
 @media (max-width: 768px) {
   .header .container { flex-direction: column; gap: 15px; }
   .nav { justify-content: center; }
-  .hero h1 { font-size: 2rem; }
-  .hero { padding: 50px 20px; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero { padding: 40px 20px; }
+  .post { padding: 30px 20px; border-radius: 0; border-left: none; border-right: none; }
   .post h1 { font-size: 2rem; }
-  .post-content a[href*="amzn.to"], .post-content a[href*="mercadolibre"] {
-    font-size: 1rem;
-    padding: 12px 20px;
-  }
 }

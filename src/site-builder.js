@@ -71,17 +71,25 @@ export function buildSite() {
   const indexTpl = readTemplate('index.html');
 
   const categoryCards = config.niche.categories.map(c =>
-    `<a href="/${c.id}" class="category-card">${c.name}</a>`
+    `<a href="/${c.id}" class="category-card">
+      <div class="cat-image" style="background-image: url('${c.image}')"></div>
+      <div class="cat-title">${c.name}</div>
+    </a>`
   ).join('\n');
 
-  const postCards = published.slice(0, 12).map(p => `
+  const postCards = published.slice(0, 12).map(p => {
+    const cat = config.niche.categories.find(c => c.id === p.category);
+    return `
     <a href="/${p.slug}" class="post-card">
-      <div class="cat-label">${htmlEscape(p.categoryName)}</div>
-      <h3>${htmlEscape(p.title)}</h3>
-      <p>${htmlEscape(p.excerpt)}</p>
-      <span class="date">${formatDate(p.date)}</span>
+      <div class="post-image" style="background-image: url('${cat ? cat.image : ''}')"></div>
+      <div class="post-info">
+        <div class="cat-label">${htmlEscape(p.categoryName)}</div>
+        <h3>${htmlEscape(p.title)}</h3>
+        <p>${htmlEscape(p.excerpt)}</p>
+        <span class="date">${formatDate(p.date)}</span>
+      </div>
     </a>
-  `).join('\n');
+  `}).join('\n');
 
   const indexHtml = renderTemplate(indexTpl, {
     CATEGORIES: categoryCards,
@@ -107,10 +115,13 @@ export function buildSite() {
 
     const cards = catPosts.map(p => `
       <a href="/${p.slug}" class="post-card">
-        <div class="cat-label">${htmlEscape(p.categoryName)}</div>
-        <h3>${htmlEscape(p.title)}</h3>
-        <p>${htmlEscape(p.excerpt)}</p>
-        <span class="date">${formatDate(p.date)}</span>
+        <div class="post-image" style="background-image: url('${cat.image}')"></div>
+        <div class="post-info">
+          <div class="cat-label">${htmlEscape(p.categoryName)}</div>
+          <h3>${htmlEscape(p.title)}</h3>
+          <p>${htmlEscape(p.excerpt)}</p>
+          <span class="date">${formatDate(p.date)}</span>
+        </div>
       </a>
     `).join('\n');
 
