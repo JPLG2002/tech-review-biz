@@ -24,17 +24,39 @@ body {
   line-height: 1.6;
   color: var(--text-main);
   background-color: #fafafa;
-  background-image: 
-    linear-gradient(rgba(0, 188, 242, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 188, 242, 0.07) 1px, transparent 1px);
-  background-size: 40px 40px;
-  animation: gridMove 10s linear infinite;
   -webkit-font-smoothing: antialiased;
 }
 
-@keyframes gridMove {
-  0% { background-position: 0 0; }
-  100% { background-position: 40px 40px; }
+/* FONDO EMOJIS FLOTANTES */
+.emoji-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.emoji-bg span {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.15;
+  animation: floatEmoji 20s linear infinite;
+}
+
+.emoji-bg span:nth-child(1) { left: 5%; top: -10%; animation-duration: 25s; }
+.emoji-bg span:nth-child(2) { left: 25%; top: -10%; animation-duration: 20s; animation-delay: 2s; }
+.emoji-bg span:nth-child(3) { left: 45%; top: -10%; animation-duration: 28s; animation-delay: 5s; }
+.emoji-bg span:nth-child(4) { left: 65%; top: -10%; animation-duration: 22s; animation-delay: 1s; }
+.emoji-bg span:nth-child(5) { left: 85%; top: -10%; animation-duration: 26s; animation-delay: 7s; }
+.emoji-bg span:nth-child(6) { left: 15%; top: -10%; animation-duration: 21s; animation-delay: 9s; }
+.emoji-bg span:nth-child(7) { left: 35%; top: -10%; animation-duration: 29s; animation-delay: 3s; }
+.emoji-bg span:nth-child(8) { left: 55%; top: -10%; animation-duration: 24s; animation-delay: 8s; }
+.emoji-bg span:nth-child(9) { left: 75%; top: -10%; animation-duration: 27s; animation-delay: 4s; }
+.emoji-bg span:nth-child(10) { left: 95%; top: -10%; animation-duration: 23s; animation-delay: 6s; }
+
+@keyframes floatEmoji {
+  0% { transform: translateY(-100px) rotate(0deg); }
+  100% { transform: translateY(110vh) rotate(360deg); }
 }
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
