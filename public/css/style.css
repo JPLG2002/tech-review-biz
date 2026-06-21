@@ -23,8 +23,16 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   color: var(--text-main);
-  background: var(--bg-secondary);
+  background: linear-gradient(-45deg, #ffffff, #f5f5f7, #ebebeb, #ffffff);
+  background-size: 400% 400%;
+  animation: bgMove 15s ease infinite;
   -webkit-font-smoothing: antialiased;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
