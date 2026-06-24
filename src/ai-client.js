@@ -8,7 +8,8 @@ export async function generateContent(prompt, systemPrompt = '', retries = 3) {
     throw new Error('OPENAI_API_KEY no configurada. Configúrala en variables de entorno.');
   }
 
-  const baseURL = config.ai.baseURL || 'https://api.openai.com/v1/chat/completions';
+  const model = config.ai.model || 'gemini-1.5-flash';
+  const baseURL = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
@@ -16,16 +17,18 @@ export async function generateContent(prompt, systemPrompt = '', retries = 3) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: config.ai.model,
-          messages: [
-            { role: 'system', content: systemPrompt || defaultSystemPrompt() },
-            { role: 'user', content: prompt },
+          systemInstruction: {
+            parts: [{ text: systemPrompt || defaultSystemPrompt() }]
+          },
+          contents: [
+            { role: 'user', parts: [{ text: prompt }] }
           ],
-          temperature: config.ai.temperature,
-          max_tokens: config.ai.maxTokens,
+          generationConfig: {
+            temperature: config.ai.temperature,
+            maxOutputTokens: config.ai.maxTokens,
+          }
         }),
       });
 
@@ -40,7 +43,7 @@ export async function generateContent(prompt, systemPrompt = '', retries = 3) {
       }
 
       const data = await response.json();
-      return data.choices[0].message.content;
+      return data.candidates[0].content.parts[0].text;
     } catch (error) {
       if (attempt === retries) throw error;
       console.log(`\n   ⚠️ Error de conexión: ${error.message}. Reintentando en 10 segundos... (Intento ${attempt}/${retries})`);

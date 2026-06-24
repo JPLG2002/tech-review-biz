@@ -4,11 +4,11 @@
   "description": "Sitio automatizado de marketing de afiliados - Tecnología",
   "type": "module",
   "scripts": {
-    "generate": "node scripts/generate-content.js",
-    "build": "node scripts/build-site.js",
-    "generate:all": "node scripts/generate-content.js && node scripts/build-site.js",
-    "stats": "node scripts/stats.js",
-    "dev": "node scripts/dev-server.js"
+    "generate": "node --env-file=.env scripts/generate-content.js",
+    "build": "node --env-file=.env scripts/build-site.js",
+    "generate:all": "node --env-file=.env scripts/generate-content.js && node --env-file=.env scripts/build-site.js",
+    "stats": "node --env-file=.env scripts/stats.js",
+    "dev": "node --env-file=.env scripts/dev-server.js"
   },
   "dependencies": {
     "chalk": "^5.3.0",

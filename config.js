@@ -28,7 +28,7 @@ export const config = {
 
   affiliate: {
     amazon: {
-      tag: 'tu-tag-amazon-20',
+      tag: 'techreviewp07-20',
       baseUrl: 'https://amzn.to',
     },
     mercadolibre: {
@@ -46,7 +46,7 @@ export const config = {
   ai: {
     provider: 'gemini',
     baseURL: 'https://generativelanguage.googleapis.com/v1beta/openai/chat/completions',
-    model: 'gemini-3.5-flash',
+    model: 'gemini-flash-latest',
     temperature: 0.7,
     maxTokens: 2000,
     apiKey: process.env.OPENAI_API_KEY || process.env.GEMINI_API_KEY || '',
